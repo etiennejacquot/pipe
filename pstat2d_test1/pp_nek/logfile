@@ -1,0 +1,346 @@
+/----------------------------------------------------------\\
+|      _   __ ______ __ __  ______  ____   ____   ____     |
+|     / | / // ____// //_/ / ____/ / __ \\/ __ \\/ __ \\   |
+|    /  |/ // __/  / ,<   /___ \\ / / / // / / // / / /    |
+|   / /|  // /___ / /| | ____/ / / /_/ // /_/ // /_/ /     |
+|  /_/ |_//_____//_/ |_|/_____/  \\___/ \\___/ \\___/      |
+|                                                          |
+|----------------------------------------------------------|
+|                                                          |
+| COPYRIGHT (c) 2008-2020 UCHICAGO ARGONNE, LLC            |
+| Version:  20.0-dev                                       |
+| Web:      https://nek5000.mcs.anl.gov                    |
+|                                                          |
+\\----------------------------------------------------------/
+
+ Number of MPI ranks :          30
+  
+ Reading /mnt/iusers01/fse-ugpgt01/mace01/t62601ej/scratch/KTH_Framework/Examples/pipe_PSTAT2D/pp_nek/turbPipe.par                           
+general = [(null)]
+general:stopat = [numSteps]
+general:numsteps = [0]
+general:dt = [-3e-03]
+general:timestepper = [bdf3]
+general:variabledt = [yes]
+general:targetcfl = [0.3]
+general:writecontrol = [timeStep]
+general:writeinterval = [1000]
+general:dealiasing = [yes]
+general:filtering = [hpfrt]
+general:filterweight = [10.0]
+general:filtercutoffratio = [0.9]
+problemtype = [(null)]
+problemtype:equation = [incompNS]
+problemtype:variableproperties = [no]
+pressure = [(null)]
+pressure:residualtol = [1e-6]
+pressure:residualproj = [yes]
+velocity = [(null)]
+velocity:residualtol = [1e-8]
+velocity:residualproj = [yes]
+velocity:density = [1.0]
+velocity:viscosity = [-2650]
+velocity:advection = [yes]
+_pstat2d = [(null)]
+_pstat2d:amr_nref = [0]
+_pstat2d:sts_ffile = [1]
+_pstat2d:sts_nfile = [10]
+_pstat2d:sts_stime = [0.7513200967293E+00]
+_pstat2d:sts_nstep = [10]
+ Reading /mnt/iusers01/fse-ugpgt01/mace01/t62601ej/scratch/KTH_Framework/Examples/pipe_PSTAT2D/pp_nek/turbPipe.re2                           
+ nelgt/nelgv/lelt:         765         765         767
+ lx1/lx2/lx3/lxd:           8           6           8          12
+
+
+
+ partioning elements to MPI ranks
+ Reading /mnt/iusers01/fse-ugpgt01/mace01/t62601ej/scratch/KTH_Framework/Examples/pipe_PSTAT2D/pp_nek/turbPipe.ma2                           
+ 
+ Max neighbors: 11 | Min neighbors: 4 | Avg neighbors: 7.133333
+ Max nvolume: 17 | Min nvolume: 1 | Avg nvolume: 5.633333
+ Max volume: 56 | Min volume: 25 | Avg volume: 41.866667
+ Max elements: 26 | Min elements: 25 | Balance: 1.040000
+  
+ done :: partioning   0.34687E-02 sec
+
+ reading mesh 
+ reading curved sides 
+ reading bc for ifld           1
+ done :: read .re2 file    0.55E-01 sec
+
+ setup mesh topology
+   Right-handed check complete for         765 elements. OK.
+   setvert2d:   8       10184       37724       10184       10184
+gs_setup: 3372 unique labels shared
+   pairwise times (avg, min, max): 1.9949e-05 1.82322e-05 2.12072e-05
+   crystal router                : 1.57631e-05 1.53102e-05 1.61082e-05
+   all reduce                    : 0.00019401 0.000192374 0.000195423
+   used all_to_all method: crystal router
+   handle bytes (avg, min, max): 49191.7 31660 56260
+   buffer bytes (avg, min, max): 7218.67 4640 8992
+   setupds time 5.2441E-03 seconds   0  8       10184         765
+           4  max multiplicity
+ done :: setup mesh topology
+  
+ call usrdat
+ done :: usrdat
+
+ generate geometry data
+ NOTE: All elements deformed , param(59) ^=0
+ done :: generate geometry data
+  
+ call usrdat2
+ done :: usrdat2
+
+  1.1102E-16  1.1102E-16  0.0000E+00  5.5511E-17  5.5511E-17  0.0000E+00 xyz repair 1
+  1.1102E-16  1.1102E-16  0.0000E+00  1.1524E-16  2.0780E-16  0.0000E+00 xyz repair 2
+  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00 xyz repair 3
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ regenerate geometry data           1
+ NOTE: All elements deformed , param(59) ^=0
+ done :: regenerate geometry data           1
+  
+ verify mesh topology
+ -0.99995325774155630       0.99995325774155630       Xrange
+ -0.99995325773989840       0.99995325773989918       Yrange
+   0.0000000000000000        0.0000000000000000       Zrange
+ done :: verify mesh topology
+  
+ mesh metrics:
+ GLL grid spacing min/max    : 1.47E-03 2.09E-02
+ scaled Jacobian  min/max/avg: 6.69E-01 1.00E+00 9.17E-01
+ aspect ratio     min/max/avg: 1.00E+00 3.63E+00 1.61E+00
+
+ IFTRAN    = T
+ IFFLOW    = T
+ IFHEAT    = F
+ IFSPLIT   = F
+ IFLOMACH  = F
+ IFUSERVP  = F
+ IFUSERMV  = F
+ IFPERT    = F
+ IFADJ     = F
+ IFSTRS    = F
+ IFCHAR    = F
+ IFCYCLIC  = F
+ IFAXIS    = F
+ IFMVBD    = F
+ IFMELT    = F
+ IFNEKNEK  = F
+ IFNEKNEKC = F
+ IFSYNC    = F
+   
+ IFVCOR    = T
+ IFINTQ    = F
+ IFGEOM    = F
+ IFSURT    = F
+ IFWCNO    = F
+   
+ IFTMSH for field           1    =  F
+ IFADVC for field           1    =  T
+ IFNONL for field           1    =  F
+   
+ Dealiasing enabled, nxd=          12
+ call usrdat3
+ done :: usrdat3
+
+ set initial conditions
+ nekuic (1) for ifld            1
+ call nekuic for vel  
+ xyz min   -0.99995     -0.99995       0.0000    
+ uvwpt min   1.0000       0.0000       0.0000       0.0000       0.0000    
+ PS min      0.0000       0.0000      0.99000E+22
+ xyz max    0.99995      0.99995       0.0000    
+ uvwpt max   1.0000       0.0000       0.0000       0.0000       0.0000    
+ PS max      0.0000       0.0000     -0.99000E+22
+ done :: set initial conditions
+  
+gridpoints unique/tot:         37724        48960
+dofs vel/pr:                   37248        27540
+  
+ Initialization successfully completed   0.82419E-01 sec
+
+ nsteps=0 -> skip time loop
+ running solver in post processing mode
+
+ call userchk
+  [MNTR] Registered module [FRAME]: Framework backbone
+  [MNTR] Registered module [MNTR]: Monitoring module
+  [MNTR] Registered timer [FRM_TOT]: Total elapsed framework time
+  [MNTR] Initial log threshold set to:  4
+  [MNTR] Module [RPRM] not registered
+  [MNTR] Registered module [RPRM]: Runtime parameters
+  [RPRM] Module [RPRM] registered section _RPRM: Runtime parameter section for rprm module
+  [RPRM] Section _RPRM registered parameter PARFWRITE: Do we write runtime parameter file
+  [RPRM] Section _RPRM registered parameter PARFNAME: Runtime parameter file name for output (without .par)
+  [RPRM] Module [MNTR] registered section _MNTR: Runtime parameter section for monitor module
+  [RPRM] Section _MNTR registered parameter LOGLEVEL: Logging threshold for toolboxes
+  [RPRM] Section _MNTR registered parameter IFTIMDSCR: Write timer description in the summary
+  [RPRM] Section _MNTR registered parameter WALLTIME: Simulation wall time
+  [MNTR] Module [IOTOOL] not registered
+  [MNTR] Registered module [IOTOOL]: I/O TOOLS
+  [MNTR] Module [PSTAT2D] not registered
+  [MNTR] Registered module [PSTAT2D]: Post processing for statistics
+  [MNTR] Registered timer [PSTAT_TOT]: Pstat total time
+  [MNTR] Registered timer [PSTAT_INI]: Pstat initialisation time
+  [MNTR] Registered timer [PSTAT_AVG]: Pstat averaging time
+  [MNTR] Registered timer [PSTAT_DER]: Pstat derivative calculation time
+  [MNTR] Registered timer [PSTAT_INT]: Pstat interpolation time
+  [RPRM] Module [PSTAT2D] registered section _PSTAT2D: Runtime paramere section for pstat module
+  [RPRM] Section _PSTAT2D registered parameter AMR_NREF: Nr. of initial refinemnt (AMR only)
+  [RPRM] Section _PSTAT2D registered parameter STS_FFILE: First stat file number
+  [RPRM] Section _PSTAT2D registered parameter STS_NFILE: Last stat file number
+  [RPRM] Section _PSTAT2D registered parameter STS_STIME: Statistics starting time
+  [RPRM] Section _PSTAT2D registered parameter STS_NSTEP: Number of steps between averaging (in sts file)
+  [MNTR] Reseting log threshold to:  4
+  [MNTR] Summary of registered modules
+    [FRAME     ] : Framework backbone                                                                                                                  
+        [MNTR      ] : Monitoring module                                                                                                                   
+        [RPRM      ] : Runtime parameters                                                                                                                  
+        [IOTOOL    ] : I/O TOOLS                                                                                                                           
+        [PSTAT2D   ] : Post processing for statistics                                                                                                      
+  [RPRM] Summary of registered runtime parameters for active sections
+#
+[_RPRM]                 # Runtime parameter section for rprm module
+PARFWRITE            = no                     # Do we write runtime parameter file
+PARFNAME             = outparfile             # Runtime parameter file name for output (without .par)
+#
+[_MNTR]                 # Runtime parameter section for monitor module
+LOGLEVEL             = 4                      # Logging threshold for toolboxes
+IFTIMDSCR            = no                     # Write timer description in the summary
+WALLTIME             = 00:00                  # Simulation wall time
+#
+[_PSTAT2D]              # Runtime paramere section for pstat module
+AMR_NREF             = 0                      # Nr. of initial refinemnt (AMR only)
+STS_FFILE            = 1                      # First stat file number
+STS_NFILE            = 10                     # Last stat file number
+STS_STIME            = 0.75132010E+00         # Statistics starting time
+STS_NSTEP            = 10                     # Number of steps between averaging (in sts file)
+ 
+  [PSTAT2D] Field averaging
+  [PSTAT2D] Opening sts file nr=        1
+WARNING: restart file has a NSPCAL > LDIMT
+read only part of the fld-data!
+       FILE:/mnt/iusers01/fse-ugpgt01/mace01/t62601ej/scratch/KTH_Framework/Examples/pipe_PSTAT2D/pp_nek/DATA/ststurbPipe0.f00001               
+
+        0  7.5132E-01 done :: Read checkpoint data
+                              avg data-throughput =    66.6MBps
+                              io-nodes =    30
+
+  [PSTAT2D] Opening sts file nr=        2
+WARNING: restart file has a NSPCAL > LDIMT
+read only part of the fld-data!
+       FILE:/mnt/iusers01/fse-ugpgt01/mace01/t62601ej/scratch/KTH_Framework/Examples/pipe_PSTAT2D/pp_nek/DATA/ststurbPipe0.f00002               
+
+        0  1.7488E+00 done :: Read checkpoint data
+                              avg data-throughput =    78.1MBps
+                              io-nodes =    30
+
+  [PSTAT2D] Opening sts file nr=        3
+WARNING: restart file has a NSPCAL > LDIMT
+read only part of the fld-data!
+       FILE:/mnt/iusers01/fse-ugpgt01/mace01/t62601ej/scratch/KTH_Framework/Examples/pipe_PSTAT2D/pp_nek/DATA/ststurbPipe0.f00003               
+
+        0  3.5717E+00 done :: Read checkpoint data
+                              avg data-throughput =    75.4MBps
+                              io-nodes =    30
+
+  [PSTAT2D] Opening sts file nr=        4
+WARNING: restart file has a NSPCAL > LDIMT
+read only part of the fld-data!
+       FILE:/mnt/iusers01/fse-ugpgt01/mace01/t62601ej/scratch/KTH_Framework/Examples/pipe_PSTAT2D/pp_nek/DATA/ststurbPipe0.f00004               
+
+        0  6.0224E+00 done :: Read checkpoint data
+                              avg data-throughput =    75.6MBps
+                              io-nodes =    30
+
+  [PSTAT2D] Opening sts file nr=        5
+WARNING: restart file has a NSPCAL > LDIMT
+read only part of the fld-data!
+       FILE:/mnt/iusers01/fse-ugpgt01/mace01/t62601ej/scratch/KTH_Framework/Examples/pipe_PSTAT2D/pp_nek/DATA/ststurbPipe0.f00005               
+
+        0  8.5842E+00 done :: Read checkpoint data
+                              avg data-throughput =    81.1MBps
+                              io-nodes =    30
+
+  [PSTAT2D] Opening sts file nr=        6
+WARNING: restart file has a NSPCAL > LDIMT
+read only part of the fld-data!
+       FILE:/mnt/iusers01/fse-ugpgt01/mace01/t62601ej/scratch/KTH_Framework/Examples/pipe_PSTAT2D/pp_nek/DATA/ststurbPipe0.f00006               
+
+        0  1.0663E+01 done :: Read checkpoint data
+                              avg data-throughput =    58.1MBps
+                              io-nodes =    30
+
+  [PSTAT2D] Opening sts file nr=        7
+WARNING: restart file has a NSPCAL > LDIMT
+read only part of the fld-data!
+       FILE:/mnt/iusers01/fse-ugpgt01/mace01/t62601ej/scratch/KTH_Framework/Examples/pipe_PSTAT2D/pp_nek/DATA/ststurbPipe0.f00007               
+
+        0  1.2475E+01 done :: Read checkpoint data
+                              avg data-throughput =    75.1MBps
+                              io-nodes =    30
+
+  [PSTAT2D] Opening sts file nr=        8
+WARNING: restart file has a NSPCAL > LDIMT
+read only part of the fld-data!
+       FILE:/mnt/iusers01/fse-ugpgt01/mace01/t62601ej/scratch/KTH_Framework/Examples/pipe_PSTAT2D/pp_nek/DATA/ststurbPipe0.f00008               
+
+        0  1.4035E+01 done :: Read checkpoint data
+                              avg data-throughput =    76.2MBps
+                              io-nodes =    30
+
+  [PSTAT2D] Opening sts file nr=        9
+WARNING: restart file has a NSPCAL > LDIMT
+read only part of the fld-data!
+       FILE:/mnt/iusers01/fse-ugpgt01/mace01/t62601ej/scratch/KTH_Framework/Examples/pipe_PSTAT2D/pp_nek/DATA/ststurbPipe0.f00009               
+
+        0  1.5407E+01 done :: Read checkpoint data
+                              avg data-throughput =    79.6MBps
+                              io-nodes =    30
+
+  [PSTAT2D] Opening sts file nr=       10
+WARNING: restart file has a NSPCAL > LDIMT
+read only part of the fld-data!
+       FILE:/mnt/iusers01/fse-ugpgt01/mace01/t62601ej/scratch/KTH_Framework/Examples/pipe_PSTAT2D/pp_nek/DATA/ststurbPipe0.f00010               
+
+        0  1.6840E+01 done :: Read checkpoint data
+                              avg data-throughput =    83.1MBps
+                              io-nodes =    30
+
+ ABORT: outpost data too large (nfldt>ldimt)!
+ ABORT: outpost data too large (nfldt>ldimt)!
+ ABORT: outpost data too large (nfldt>ldimt)!
+ ABORT: outpost data too large (nfldt>ldimt)!
+ ABORT: outpost data too large (nfldt>ldimt)!
+ ABORT: outpost data too large (nfldt>ldimt)!
+ ABORT: outpost data too large (nfldt>ldimt)!
+ ABORT: outpost data too large (nfldt>ldimt)!
+  
+an error occured: dying ...
+  
+ ABORT: outpost data too large (nfldt>ldimt)!
+ ABORT: outpost data too large (nfldt>ldimt)!
+ ABORT: outpost data too large (nfldt>ldimt)!
+ ABORT: outpost data too large (nfldt>ldimt)!
+ ABORT: outpost data too large (nfldt>ldimt)!
+ ABORT: outpost data too large (nfldt>ldimt)!
+ ABORT: outpost data too large (nfldt>ldimt)!
+ ABORT: outpost data too large (nfldt>ldimt)!
+ ABORT: outpost data too large (nfldt>ldimt)!
+ ABORT: outpost data too large (nfldt>ldimt)!
+ ABORT: outpost data too large (nfldt>ldimt)!
+ ABORT: outpost data too large (nfldt>ldimt)!
+ ABORT: outpost data too large (nfldt>ldimt)!
+ ABORT: outpost data too large (nfldt>ldimt)!
+ ABORT: outpost data too large (nfldt>ldimt)!
+ ABORT: outpost data too large (nfldt>ldimt)!
+ ABORT: outpost data too large (nfldt>ldimt)!
+ ABORT: outpost data too large (nfldt>ldimt)!
+ ABORT: outpost data too large (nfldt>ldimt)!
+ ABORT: outpost data too large (nfldt>ldimt)!
+ ABORT: outpost data too large (nfldt>ldimt)!
+ ABORT: outpost data too large (nfldt>ldimt)!
